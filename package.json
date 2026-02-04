@@ -1,10 +1,14 @@
 {
   "name": "electron-prac-claude",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minecraft Custom Launcher",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +24,50 @@
   "homepage": "https://github.com/go-tiger/electron-prac-claude#readme",
   "devDependencies": {
     "electron": "^40.1.0",
+    "electron-builder": "^26.7.0",
     "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.7.3"
+  },
+  "build": {
+    "appId": "com.electron.minecraft-launcher",
+    "productName": "Minecraft Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "go-tiger",
+      "repo": "electron-prac-claude"
+    }
   }
 }

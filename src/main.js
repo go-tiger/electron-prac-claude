@@ -1,10 +1,14 @@
 const { app, BrowserWindow } = require('electron')
+const { autoUpdater } = require('electron-updater')
 const path = require('path')
 
 // 개발 모드에서 핫 리로드 활성화
 try {
   require('electron-reloader')(module)
 } catch {}
+
+// 자동 업데이트 설정
+autoUpdater.checkForUpdatesAndNotify()
 
 function createWindow() {
   const win = new BrowserWindow({
