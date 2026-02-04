@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Minecraft Launcher</h1>
+      <div class="version-info" id="version-info"></div>
+    </header>
+
+    <main class="main-content">
+      <div class="profile-section">
+        <h2>프로필 선택</h2>
+        <select class="profile-selector">
+          <option>최신 릴리즈</option>
+          <option>최신 스냅샷</option>
+        </select>
+      </div>
+
+      <div class="launch-section">
+        <button class="launch-button">게임 시작</button>
+      </div>
+
+      <div class="info-section">
+        <h3>준비 중...</h3>
+        <p>마인크래프트 커스텀 런처 개발 버전입니다.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

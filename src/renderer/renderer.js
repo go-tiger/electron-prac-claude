@@ -1,0 +1,10 @@
+// 버전 정보 표시
+const versionInfo = document.getElementById('version-info')
+const versions = window.launcher.getVersions()
+versionInfo.textContent = `Electron ${versions.electron} | Node ${versions.node} | Chrome ${versions.chrome}`
+
+// 게임 시작 버튼
+const launchButton = document.querySelector('.launch-button')
+launchButton.addEventListener('click', () => {
+  alert('게임 시작 기능은 아직 구현되지 않았습니다.')
+})

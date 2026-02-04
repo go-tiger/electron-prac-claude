@@ -1,8 +1,10 @@
 {
   "name": "electron-prac-claude",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "src/main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,8 @@
     "url": "https://github.com/go-tiger/electron-prac-claude/issues"
   },
   "homepage": "https://github.com/go-tiger/electron-prac-claude#readme",
-  "description": ""
+  "devDependencies": {
+    "electron": "^40.1.0",
+    "electron-reloader": "^1.2.3"
+  }
 }
