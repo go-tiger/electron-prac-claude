@@ -1,6 +1,6 @@
 {
   "name": "electron-prac-claude",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minecraft Custom Launcher",
   "main": "src/main.js",
   "scripts": {
