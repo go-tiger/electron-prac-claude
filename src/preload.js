@@ -1,4 +1,4 @@
-const { contextBridge } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
 // 렌더러 프로세스에 API 노출
 contextBridge.exposeInMainWorld('launcher', {
@@ -10,4 +10,7 @@ contextBridge.exposeInMainWorld('launcher', {
       electron: process.versions.electron,
     };
   },
+  onUpdateStatus: (callback) => {
+    ipcRenderer.on('update-status', (_event, text) => callback(text));
+  }
 });

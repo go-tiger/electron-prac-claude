@@ -27,16 +27,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .header h1 {
   font-size: 28px;
   font-weight: 600;
+  flex: 1;
 }
 
 .version-info {
   font-size: 12px;
   opacity: 0.8;
+}
+
+.update-status {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.2);
+  border-radius: 6px;
+  border-left: 4px solid #4CAF50;
+  margin-top: 10px;
 }
 
 .main-content {
