@@ -9,6 +9,11 @@ try {
 
 let mainWindow = null;
 
+// IPC 핸들러: 앱 버전 정보 요청
+ipcMain.handle('get-app-version', () => {
+  return app.getVersion();
+});
+
 // 자동 업데이트 이벤트 리스너
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('업데이트 확인 중...');

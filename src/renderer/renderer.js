@@ -1,7 +1,8 @@
 // 버전 정보 표시
 const versionInfo = document.getElementById('version-info');
-const versions = window.launcher.getVersions();
-versionInfo.textContent = `v${versions.app} | Electron ${versions.electron} | Node ${versions.node} | Chrome ${versions.chrome}`;
+window.launcher.getVersions().then(versions => {
+  versionInfo.textContent = `v${versions.app} | Electron ${versions.electron} | Node ${versions.node} | Chrome ${versions.chrome}`;
+});
 
 // 업데이트 상태 표시
 const updateStatus = document.getElementById('update-status');
