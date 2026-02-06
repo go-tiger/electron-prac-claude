@@ -37,11 +37,17 @@ autoUpdater.on('download-progress', progressObj => {
 });
 
 autoUpdater.on('update-downloaded', info => {
-  sendStatusToWindow('업데이트 다운로드 완료. 재시작 후 적용됩니다.');
-  // 5초 후 자동 재시작
-  setTimeout(() => {
-    autoUpdater.quitAndInstall();
-  }, 5000);
+  let countdown = 5;
+  sendStatusToWindow(`업데이트 다운로드 완료! ${countdown}초 후 자동으로 재시작합니다...`);
+  const timer = setInterval(() => {
+    countdown--;
+    if (countdown > 0) {
+      sendStatusToWindow(`업데이트 다운로드 완료! ${countdown}초 후 자동으로 재시작합니다...`);
+    } else {
+      clearInterval(timer);
+      autoUpdater.quitAndInstall();
+    }
+  }, 1000);
 });
 
 function sendStatusToWindow(text) {
